@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark W. Hendrickson for Santa Clara City Council</title>
+    <meta name="description" content="Mark W. Hendrickson is running for Santa Clara City Council to preserve what matters and plan for what's next. Learn more about his vision for a thriving community.">
+    <meta name="author" content="Mark W. Hendrickson Campaign">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0A3A5C; /* Deep, trustworthy blue */
+            --secondary-green: #3D8B83; /* Muted, growth-oriented green */
+            --accent-gold: #C9A66B; /* Warm, hopeful accent */
+            --light-gray: #F4F4F4; /* Clean background */
+            --dark-gray: #333333; /* Readable text */
+            --white: #FFFFFF;
+            --heading-font: 'Lora', serif;
+            --body-font: 'Roboto', sans-serif;
+        }
+
+        /* --- Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--heading-font);
+            color: var(--primary-blue);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 2.5rem; margin-bottom: 1.5rem; text-align: center; }
+        h3 { font-size: 1.75rem; color: var(--secondary-green); margin-bottom: 1rem; }
+        h4 { font-size: 1.25rem; color: var(--primary-blue); margin-bottom: 0.5rem; }
+
+        p { margin-bottom: 1rem; }
+        a { color: var(--secondary-green); text-decoration: none; transition: color 0.3s ease; }
+        a:hover, a:focus { color: var(--accent-gold); text-decoration: underline; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--light-gray);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--secondary-green);
+            color: var(--white);
+            font-family: var(--body-font);
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover, .btn:focus {
+            background-color: var(--accent-gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .btn-outline:hover, .btn-outline:focus {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .main-nav li {
+            margin-left: 25px;
+        }
+
+        .main-nav a {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: var(--primary-blue);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(10, 58, 92, 0.7), rgba(10, 58, 92, 0.7)), url('sc-drive.jpg') no-repeat center center/cover;
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 85vh;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--white);
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero .tagline {
+            font-size: 1.75rem;
+            font-family: var(--heading-font);
+            margin-bottom: 1rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .hero .sub-tagline {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero .cta-buttons {
+            margin-top: 2rem;
+        }
+
+        .hero .cta-buttons .btn {
+            margin: 0 10px;
+        }
+
+        .hero .btn-outline {
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        .hero .btn-outline:hover,
+        .hero .btn-outline:focus {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* --- About Section --- */
+        #about .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1.5;
+        }
+
+        /* --- Priorities Section --- */
+        .priorities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .priority-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--secondary-green);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .priority-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .priority-card .icon {
+            font-size: 2.5rem;
+            color: var(--secondary-green);
+            margin-bottom: 1rem;
+        }
+
+        /* --- Community Roots Section --- */
+        #roots {
+            position: relative;
+            background: url('merc.png') no-repeat center center/cover;
+            padding: 100px 0;
+            color: var(--white);
+            text-align: center;
+        }
+
+        #roots::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 58, 92, 0.8);
+            z-index: 1;
+        }
+
+        #roots .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        #roots h2 {
+            color: var(--white);
+        }
+
+        #roots p {
+            max-width: 700px;
+            margin: 0 auto 1rem auto;
+            font-size: 1.1rem;
+        }
+
+        /* --- Experience Section --- */
+        #experience {
+            background-color: var(--white);
+        }
+
+        .experience-grid {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 40px;
+            column-count: 2;
+            column-gap: 40px;
+        }
+
+        .experience-grid li {
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            position: relative;
+            break-inside: avoid-column;
+        }
+
+        .experience-grid li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .experience-grid {
+                column-count: 1;
+            }
+        }
+
+        /* --- Get Involved Section --- */
+        .involve-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            text-align: center;
+            align-items: start;
+        }
+
+        .involve-card {
+            padding: 20px;
+        }
+
+        /* --- Contact Section --- */
+        #contact .container {
+            max-width: 800px;
+        }
+
+        .contact-form {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--body-font);
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            grid-column: 1 / -1;
+            justify-self: center;
+            width: 50%;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--primary-blue);
+            color: var(--light-gray);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: var(--white);
+            margin: 0 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover, .social-links a:focus {
+            color: var(--accent-gold);
+        }
+
+        .footer-nav {
+            margin: 20px 0;
+        }
+
+        .footer-nav a {
+            color: var(--light-gray);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-nav a:hover, .footer-nav a:focus {
+            text-decoration: underline;
+            color: var(--white);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 3rem; }
+            h2 { font-size: 2rem; }
+
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .main-nav.active {
+                display: flex;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+            }
+
+            .main-nav li {
+                margin: 0;
+            }
+
+            .main-nav a {
+                display: block;
+                padding: 15px;
+                border-bottom: 1px solid var(--light-gray);
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            #about .container {
+                flex-direction: column;
+            }
+
+            .about-image {
+                max-width: 80%;
+                margin-bottom: 30px;
+            }
+
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header" id="home">
+        <div class="container">
+            <a href="#home" class="logo">Mark W. Hendrickson</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                &#9776;
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#priorities">Priorities</a></li>
+                    <li><a href="#roots">Community Roots</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#involved">Get Involved</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Mark W. Hendrickson</h1>
+                <p class="tagline">Preserving What Matters. Planning for What's Next.</p>
+                <p class="sub-tagline">Local Roots. Sensible Leadership.</p>
+                <div class="cta-buttons">
+                    <a href="#involved" class="btn">Join Mark's Team</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="about-image">
+                    <img src="mark.jpg" alt="Professional photo of Mark W. Hendrickson">
+                </div>
+                <div class="about-text">
+                    <h3>A Message from Mark</h3>
+                    <p>Santa Clara is more than a place—it’s a legacy. It was built by pioneers with grit, vision, and an unshakable belief in community. That spirit still lives in our neighborhoods, our traditions, and our families. I’ve spent my life here—raising two daughters, serving in our community, and now watching my grandchildren grow up with the same deep roots that stretch back to the founding of this city.</p>
+                    <p>I’m running for City Council because I believe in protecting what makes Santa Clara special—but I also believe in preparing for the future. Our city is growing, and with that growth comes responsibility: to plan wisely, to invest in our core infrastructure, and to make sure our values are reflected in the way we build, connect, and live together.</p>
+                    <p><strong>I’m not here to make noise. I’m here to do the work.</strong></p>
+                    <p>That means making sure our streets, sidewalks, and parks meet the needs of every generation—from toddlers in strollers to grandparents in wheelchairs. It means thoughtful development that honors our heritage without turning away opportunities that can strengthen our community. It means working with—not against—those who care deeply about this city, even when we don’t always agree.</p>
+                    <p>Some believe the best way to protect Santa Clara is to freeze it in time. I don’t. I believe the best way to honor our past is to shape a future that our children and grandchildren will be proud to call home.</p>
+                    <p>This city doesn’t need more noise. It needs leadership that listens, plans, and gets to work. That’s the kind of leader I’ve always been—and that’s the kind of councilmember I’ll be.</p>
+                    <div class="signature">
+                        <p>Let’s preserve what matters. Let’s plan for what’s next.</p>
+                        <p>Let’s do it together.</p>
+                        <p><strong>Mark W. Hendrickson</strong><br><em>Candidate for Santa Clara City Council</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="priorities">
+            <div class="container">
+                <h2>Key Priorities for Santa Clara</h2>
+                <div class="priorities-grid">
+                    <div class="priority-card">
+                        <div class="icon">&#128679;</div> <!-- Roadwork sign emoji -->
+                        <h4>Infrastructure for All Generations</h4>
+                        <p>Investing in our roads, parks, and public services to meet the needs of today's families and future residents.</p>
+                    </div>
+                    <div class="priority-card">
+                        <div class="icon">&#129309;</div> <!-- Handshake emoji -->
+                        <h4>Collaborative Leadership</h4>
+                        <p>Working with everyone to find practical solutions, not create division. My focus is on results for Santa Clara.</p>
+                    </div>
+                    <div class="priority-card">
+                        <div class="icon">&#127795;</div> <!-- Seedling emoji -->
+                        <h4>Preserving Community & Smart Growth</h4>
+                        <p>Balancing progress with the preservation of our neighborhoods and the unique character that makes Santa Clara special.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roots">
+            <div class="container">
+                <h2>Deep Community Roots</h2>
+                <p>Mark isn't just a candidate; he's a neighbor with multi-generational ties to Santa Clara. He understands the city's history and its values because he has lived them. Raising his daughters and now watching his grandchildren grow up here, Mark is personally invested in Santa Clara's future. His long-term community involvement is a testament to his unwavering commitment to the people he hopes to serve.</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2>Proven Experience & Leadership</h2>
+                <ul class="experience-grid">
+                    <li>Santa Clara City Planning Commission - Chairperson and Commission Member</li>
+                    <li>Washington County Economic Development Council - Chairperson and Board Member</li>
+                    <li>Economic Development Council of Utah - Board Member</li>
+                    <li>Leadership Dixie - Member and Board Member</li>
+                    <li>Santa Clara Little League - Board Member</li>
+                    <li>St. George Breakfast Exchange Club - President and Member</li>
+                    <li>WC School District Foundation - Board Member</li>
+                    <li>40+ years of doing business in Washington County</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="involved">
+            <div class="container">
+                <h2>Get Involved</h2>
+                <div class="involve-grid">
+                    <div class="involve-card">
+                        <h3>Volunteer</h3>
+                        <p>Join a dedicated team of neighbors working to make a difference. We have roles for every skill level and time commitment.</p>
+                        <a href="#contact" class="btn">Join Mark's Team</a>
+                    </div>
+                    <div class="involve-card">
+                        <h3>Support</h3>
+                        <p>Your support helps us reach more voters with Mark's message of practical leadership. Every contribution makes an impact.</p>
+                        <a href="#contact" class="btn btn-outline">Ways to Support</a>
+                    </div>
+                    <div class="involve-card">
+                        <h3>Follow on Instagram</h3>
+                        <p>Get real-time updates, see behind-the-scenes moments from the campaign trail, and connect with Mark directly.</p>
+                        <a href="#" class="btn" target="_blank" rel="noopener noreferrer">Follow Mark</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Connect with Mark</h2>
+                <p>Have a question, an idea, or want to get involved? Use the form below to get in touch with the campaign. We look forward to hearing from you.</p>
+                <form class="contact-form" name="contact" method="POST" data-netlify="true">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">F</a> <!-- Placeholder -->
+                <a href="#" aria-label="Twitter">T</a> <!-- Placeholder -->
+                <a href="#" aria-label="Instagram">I</a> <!-- Placeholder -->
+            </div>
+            <nav class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#priorities">Priorities</a>
+                <a href="#roots">Community Roots</a>
+                <a href="#experience">Experience</a>
+                <a href="#involved">Get Involved</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="copyright">
+                <p>Paid for by the Committee to Elect Mark W. Hendrickson for Santa Clara City Council 2025.</p>
+                <p>&copy; <span id="year"></span> Mark W. Hendrickson for Santa Clara. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    const isExpanded = mainNav.classList.contains('active');
+                    navToggle.setAttribute('aria-expanded', isExpanded);
+                });
+            }
+
+            // Close mobile nav when a link is clicked
+            const navLinks = document.querySelectorAll('.main-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // Set current year in footer
+            const yearSpan = document.getElementById('year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+
+</body>
+</html>
