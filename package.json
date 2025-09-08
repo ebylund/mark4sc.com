@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "imagemin-cli": "^8.0.0",
+    "imagemin-jpegtran": "^8.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "optimize": "node optimize-images.js"
+  }
+}
