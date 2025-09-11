@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <style>
         :root {
@@ -657,7 +658,7 @@
             <div class="container">
                 <h2>Connect with Mark</h2>
                 <p>Have a question, an idea, or want to get involved? Use the form below to get in touch with the campaign. We look forward to hearing from you.</p>
-                <form class="contact-form" name="contact" method="POST" data-netlify="true">
+                <form id="contact-form" class="contact-form" method="POST">
                     <div class="form-group">
                         <label for="first-name">First Name</label>
                         <input type="text" id="first-name" name="first-name" required>
@@ -701,7 +702,7 @@
                 <a href="#contact">Contact</a>
             </nav>
             <div class="copyright">
-                <p>Paid for by the Committee to Elect Mark Hendrickson for Santa Clara City Council 2025.</p>
+                <p>Paid for by the Committee to elect Mark Hendrickson.</p>
                 <p>&copy; <span id="year"></span> Mark Hendrickson for Santa Clara. All Rights Reserved.</p>
             </div>
         </div>
@@ -736,6 +737,41 @@
             const yearSpan = document.getElementById('year');
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // EmailJS Form Submission
+            const contactForm = document.getElementById('contact-form');
+            if(contactForm) {
+                emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS Public Key
+
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.textContent;
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+
+                    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                        .then(function() {
+                            submitBtn.textContent = 'Sent!';
+                            console.log('SUCCESS!');
+                            setTimeout(() => {
+                                submitBtn.textContent = originalBtnText;
+                                submitBtn.disabled = false;
+                                contactForm.reset();
+                            }, 3000);
+                        }, function(error) {
+                            submitBtn.textContent = 'Send Failed';
+                            submitBtn.style.backgroundColor = '#d9534f'; // Error red color
+                            console.log('FAILED...', error);
+                            setTimeout(() => {
+                                submitBtn.textContent = originalBtnText;
+                                submitBtn.disabled = false;
+                                submitBtn.style.backgroundColor = ''; // Revert color
+                            }, 5000);
+                        });
+                });
             }
         });
     </script>
